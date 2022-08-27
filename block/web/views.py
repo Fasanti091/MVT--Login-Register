@@ -2,4 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    return render(request, "web/base_principal.html")
+    return render(request, "web/index.html")
+
+def comentarios(request):
+    return render(request, "web/comentarios.html")
