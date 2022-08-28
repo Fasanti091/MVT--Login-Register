@@ -1,0 +1,21 @@
+{% extends 'web/base_principal.html' %}
+
+{% block listado %}
+    {% for comentario in comentarios %}
+
+    <section class="mb-5">
+        <div class="card bg-light">
+            <div class="card-body">
+                <!-- Single comment-->
+                <div class="d-flex">
+                    <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                    <div class="ms-3">
+                        <div class="fw-bold">Commenter Name || <h3>{{comentario.titulo}}</h3></div>
+                        {{comentario.contenido}}  ||  {{comentario.fecha_publicacion}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endfor %}
+{% endblock listado %}
