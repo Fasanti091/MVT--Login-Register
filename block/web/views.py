@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from web.models import *
 
+
 # Create your views here.
 def index(request):
     return render(request, "web/index.html")
