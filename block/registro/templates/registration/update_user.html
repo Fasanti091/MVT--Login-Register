@@ -1,40 +1,25 @@
 {% extends 'web/base_principal.html' %}
-
-
 {% block Editar_usuario %}
-<br>
-<br>
-<br>
-
-
-  
-    
-
-<div class="row">
-    <div class="col-12 col-md-6 offset-md-3">
-
-        <div class="card">
-            <div class="card-body">
-                <h2><h1>Editando informacion de {{request.user.username}}</h1>
-                </h2>
-                <hr>     
-                <form method="post">
+    <br>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-12 col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h2><h1>Editando informacion de {{request.user.username}}</h1>
+                    </h2>
+                    <hr>     
+                    <form method="post">
                     {% csrf_token %}
-                      {{form.as_p}}
-                   <input type="submit" value="Editar" class= "btn btn-success float-right">
-                   </form>                   
-                 
-                    <a class= "btn btn-success float-right"href="{% url 'inicio' %}">Ir al inicio</a>           
-            
-                
-                </form>
-
+                    {{form.as_p}}
+                    <input type="submit" value="Editar" class= "btn btn-success float-right">
+                    </form>
+                    <br>                   
+                    <a class= "btn btn-success float-right"href="{% url 'inicio' %}">Ir al inicio</a>                      
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-
-
-</div>
 {% endblock Editar_usuario %}
