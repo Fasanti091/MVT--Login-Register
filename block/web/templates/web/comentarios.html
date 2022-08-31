@@ -3,6 +3,22 @@
 {% block listado %}
     {% for comentario in comentarios %}
 
+    <!-- Search widget-->
+    <div class="container">
+        <div class="card ls-4">
+            <div class="card-header" style="text-align: center;">Busqueda de comentarios</div>
+            <div class="card-body">
+                <div class="input-group">
+                    <form class="d-flex" role="search">
+                        {{ formulario.as_p }} &nbsp;
+                        <button class="btn btn-primary" id="button-search" style="height: 30px;" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+    <hr>
     <section class="mb-5">
         <div class="card bg-light">
             <div class="card-body">
