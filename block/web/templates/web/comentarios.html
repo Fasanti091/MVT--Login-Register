@@ -1,15 +1,31 @@
 {% extends 'web/base_principal.html' %}
 
+{% block titulo_comnetarios %}
+    <h1 style="text-align: center;">Comentarios Aninimos</h1>
+    <br>
+    <br>
+    <br>
+    <hr><br>
+{% endblock titulo_comnetarios %}
 
 {% block crear_comentarios%}
     {% if user.is_authenticated %}
-    <form method="post">{% csrf_token %}
-        
-        {{ formulario.as_table}}
-        <input type="submit" value="Crear">
-        <hr>
-        
-    </form>
+    <h4 style="text-align: center; color: green;">Crear Comentario</h4>
+    <br>
+    <br>
+    <div style="text-align: center;">
+        <form method="post">{% csrf_token %}
+            
+            {{ formulario.as_table}}
+            <br>
+            <br>
+            <input class="btn btn-outline-success mb-3 d-grid gap-2 col-5 mx-auto" type="submit" value="Crear">
+            <br>
+            <hr>
+            
+            
+        </form>
+    </div>
     {% endif%}
 {% endblock crear_comentarios%}
 
@@ -27,6 +43,10 @@
                         <div class="fw-bold">Usuario Anonimo<h4>{{comentario.titulo}}</h4></div>
                         {{comentario.contenido}}  ||  {{comentario.fecha_publicacion}}
                     </div>
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <a class="btn btn-outline-danger" href="{% url 'borrar_comentarios' comentario.id %} " role="button">Eliminar</a>
+                    <a class="btn btn-outline-dark" href="{% url 'borrar_comentarios' comentario.id %} " role="button">Editar</a>
                 </div>
             </div>
         </div>

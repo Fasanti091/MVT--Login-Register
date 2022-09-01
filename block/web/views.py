@@ -1,4 +1,3 @@
-from cgitb import reset
 from http.client import HTTPResponse
 from multiprocessing import context
 from django.shortcuts import render
@@ -54,3 +53,12 @@ def formulariosComentarios(request):
     else:
         formulario = FormularioPosteo()
         return render(request, "web/comentarios.html", {"comentarios": comentarios, "formulario" : formulario})
+
+def borrar_comentarios(request, id_titulo):
+    try:
+        titulo = Posteo.objects.get(id=id_titulo)
+        titulo.delete()
+
+        return render(request, "web/index.html")
+    except:
+        return HTTPResponse("No valido")
