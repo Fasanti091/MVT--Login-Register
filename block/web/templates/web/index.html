@@ -7,7 +7,7 @@
         <!-- Post header-->
         <header class="mb-4">
             <!-- Post title-->
-            <h1 class="fw-bolder mb-1">Bienvenidos a nuestro Post!</h1>
+            <h1 class="fw-bolder mb-1">Bienvenidos a nuestro Post de Python</h1>
             <!-- Post meta content-->
             <div class="text-muted fst-italic mb-2">{{ dateTime }}</div>
             <!-- Post categories-->
@@ -16,15 +16,21 @@
             <a class="badge bg-secondary text-decoration-none link-light" href="#!">Django</a>
         </header>
         <!-- Preview image figure-->
-        <figure class="mb-4"><img class="img-fluid rounded" src="https://nodenet.es/sites/default/files/2022-06/crear-un-blog-en-internet.png" alt="..." /></figure>
+        <figure class="mb-4"><img class="img-fluid rounded" src="https://images.hdqwalls.com/wallpapers/python-logo-4k-i6.jpg" alt="..." /></figure>
         <!-- Post content-->
         <section class="mb-5">
-            <p class="fs-5 mb-4">Science is an enterprise that should be cherished as an activity of the free human mind. Because it transforms who we are, how we live, and it gives us an understanding of our place in the universe.</p>
-            <p class="fs-5 mb-4">The universe is large and old, and the ingredients for life as we know it are everywhere, so there's no reason to think that Earth would be unique in that regard. Whether of not the life became intelligent is a different question, and we'll see if we find that.</p>
-            <p class="fs-5 mb-4">If you get asteroids about a kilometer in size, those are large enough and carry enough energy into our system to disrupt transportation, communication, the food chains, and that can be a really bad day on Earth.</p>
-            <h2 class="fw-bolder mb-4 mt-5">I have odd cosmic thoughts every day</h2>
-            <p class="fs-5 mb-4">For me, the most fascinating interface is Twitter. I have odd cosmic thoughts every day and I realized I could hold them to myself or share them with people who might be interested.</p>
-            <p class="fs-5 mb-4">Venus has a runaway greenhouse effect. I kind of want to know what happened there because we're twirling knobs here on Earth without knowing the consequences of it. Mars once had running water. It's bone dry today. Something bad happened there as well.</p>
+            <p class="fs-5 mb-4">
+                Python fue creado por el informático Guido van Rossum, quien había estado trabajando con un lenguaje llamado ABC en su anterior trabajo en el Centrum Wiskunde y Informática Instituto Nacional de Investigación en Matemáticas e Informática en los Países Bajos-. Aunque le gustaban algunos aspectos de ABC, estaba frustrado por lo difícil que era difundir este lenguaje.
+            </P>
+            <p class="fs-5 mb-4">
+                Durante las vacaciones de Navidad de 1989, van Rossum decidió intentar crear su propio lenguaje. Poco más de un año después, en febrero de 1991, subió la primera versión de su creación a USENET.
+            </p>
+            <h2 class="fw-bolder mb-4 mt-5">¿Qué es Python?</h2>
+            <p class="fs-5 mb-4">
+                En términos técnicos, Python es un lenguaje de programación de alto nivel, orientado a objetos, con una semántica dinámica integrada, principalmente para el desarrollo web y de aplicaciones informáticas.
+                Es muy atractivo en el campo del Desarrollo Rápido de Aplicaciones porque ofrece tipificación dinámica y opciones de encuadernación dinámicas.
+                Python es relativamente simple, por lo que es fácil de aprender, ya que requiere una sintaxis única que se centra en la legibilidad. Los desarrolladores pueden leer y traducir el código Python mucho más fácilmente que otros lenguajes.
+            </p>
         </section>
     </article>
     <!-- Comments section-->
@@ -34,31 +40,33 @@
 <div class="col-lg-4">
     
     <!-- Categories widget-->
+    {% if user.is_authenticated %}
     <div class="card mb-4">
-        <div class="card-header">Categories</div>
+        <div class="card-header">Categorias</div>
         <div class="card-body">
             <div class="row">
                 <div class="col-sm-6">
                     <ul class="list-unstyled mb-0">
-                        <li><a href="#!">Web Design</a></li>
-                        <li><a href="#!">HTML</a></li>
-                        <li><a href="#!">Freebies</a></li>
+                        <li><a href="#!">Blogs Creados </a></li>
+                        <li><a href="#!">Programacion</a></li>
+                        <li><a href="#!">Frameworks</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-6">
                     <ul class="list-unstyled mb-0">
-                        <li><a href="#!">JavaScript</a></li>
+                        <li><a href="#!">ddf</a></li>
                         <li><a href="#!">CSS</a></li>
-                        <li><a href="#!">Tutorials</a></li>
+                        <li><a href="#!">Nosotros</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
+    {% endif %}
     <!-- Side widget-->
     <div class="card mb-4">
-        <div class="card-header">Side Widget</div>
-        <div class="card-body">You can put anything you want inside of these side widgets. They are easy to use, and feature the Bootstrap 5 card component!</div>
+        <div class="card-header">Informacion</div>
+        <div class="card-body">Es importante registrarse para acceder a varias opciones del blog, espero que sea de su agrado.</div>
     </div>
 </div>
 {% endblock index %}

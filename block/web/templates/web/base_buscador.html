@@ -1,17 +1,22 @@
 {% extends 'web/base_principal.html' %}
 
 
-{% block crear_comentarios%}
-    {% if user.is_authenticated %}
-    <form method="post">{% csrf_token %}
-        
-        {{ formulario.as_table}}
-        <input type="submit" value="Crear">
-        <hr>
-        
-    </form>
-    {% endif%}
-{% endblock crear_comentarios%}
+{% block buscador %}
+<div class="container">
+    <div class="card ls-4">
+        <div class="card-header" style="text-align: center;">Busqueda de comentarios</div>
+        <div class="card-body">
+            <div class="input-group">
+                <form class="d-flex" role="search">
+                    {{ formulario.as_p }} &nbsp;
+                    <button class="btn btn-primary" id="button-search" style="height: 30px;" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>
+</div>
+{% endblock buscador %}
 
 {% block listado %}
     {% for comentario in comentarios %}

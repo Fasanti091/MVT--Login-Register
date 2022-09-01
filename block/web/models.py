@@ -7,3 +7,9 @@ class Posteo(models.Model):
     contenido = models.CharField(max_length=350)
     fecha_publicacion = models.DateField()
 
+# class Blog(models.Model):
+
+#     titulo = models.CharField(max_length=100)
+#     subtitulo = models.CharField(max_length=100)
+#     cuerpo = models.CharField(max_length=100),
+#     auto
