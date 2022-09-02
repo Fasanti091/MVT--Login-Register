@@ -7,6 +7,7 @@ urlpatterns = [
     path('registro/', registro ,name="registro"),
     path('edit/',editPerfil,name='editar'),
     path('comentarios/', formulariosComentarios, name="comentarios"),
-    path('borrar_comentarios/<int:id_titulo>', borrar_comentarios, name="borrar_comentarios")
+    path('borrar_comentarios/<int:id_titulo>', borrar_comentarios, name="borrar_comentarios"),
+    path('editar_comentarios/<int:id_titulo>', editar_comentarios, name="editar_comentarios")
     
 ]

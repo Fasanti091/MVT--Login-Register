@@ -45,8 +45,8 @@
                     </div>
                 </div>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <a class="btn btn-outline-danger" href="{% url 'borrar_comentarios' comentario.id %} " role="button">Eliminar</a>
-                    <a class="btn btn-outline-dark" href="{% url 'borrar_comentarios' comentario.id %} " role="button">Editar</a>
+                    {% if user.is_authenticated %}<a class="btn btn-outline-danger" href="{% url 'borrar_comentarios' comentario.id %} " role="button">Eliminar</a>{% endif %}
+                    {% if user.is_authenticated %}<a class="btn btn-outline-dark" href="{% url 'editar_comentarios' comentario.id %} " role="button">Editar</a>{% endif %}
                 </div>
             </div>
         </div>

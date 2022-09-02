@@ -1,6 +1,7 @@
+from contextlib import redirect_stderr
 from http.client import HTTPResponse
 from multiprocessing import context
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from web.models import *
 from datetime import datetime
 from web.forms import *
@@ -45,7 +46,7 @@ def formulariosComentarios(request):
             comentarios = Posteo(titulo=titulo, contenido=contenido, fecha_publicacion=fecha_publicacion)
             comentarios.save()
 
-            return render(request, "web/index.html")
+            return redirect("comentarios")
         
         else:
             return HTTPResponse("No valido")
@@ -59,6 +60,25 @@ def borrar_comentarios(request, id_titulo):
         titulo = Posteo.objects.get(id=id_titulo)
         titulo.delete()
 
-        return render(request, "web/index.html")
+        return redirect("comentarios")
     except:
         return HTTPResponse("No valido")
+
+def editar_comentarios(request,id_titulo):
+    if request.method == "GET":
+        formulario = FormularioPosteo()
+        return render(request, "web/comentarios_actualizar.html",{"formulario": formulario})
+
+    else:
+        formulario = FormularioPosteo(request.POST)
+        if formulario.is_valid():
+            data = formulario.cleaned_data
+            try:
+                posteo = Posteo.objects.get(id=id_titulo)
+                posteo.titulo = data.get("titulo")
+                posteo.contenido = data.get("contenido")
+                posteo.save()
+
+            except:
+                return HTTPResponse("Error en la actualizacion")
+        return redirect("comentarios")

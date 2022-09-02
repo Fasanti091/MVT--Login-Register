@@ -1,0 +1,22 @@
+{% extends 'web/base_principal.html' %}
+
+{% block crear_comentarios%}
+    {% if user.is_authenticated %}
+    <h4 style="text-align: center; color: green;">Actualizar Comentario</h4>
+    <br>
+    <br>
+    <div style="text-align: center;">
+        <form method="post">{% csrf_token %}
+            
+            {{ formulario.as_table}}
+            <br>
+            <br>
+            <input class="btn btn-outline-success mb-3 d-grid gap-2 col-5 mx-auto" type="submit" value="Crear">
+            <br>
+            <hr>
+            
+            
+        </form>
+    </div>
+    {% endif%}
+{% endblock crear_comentarios%}
