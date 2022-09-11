@@ -1,7 +1,7 @@
 {% extends 'web/base_principal.html' %}
 
 {% block titulo_comnetarios %}
-    <h1 style="text-align: center;">Comentarios Aninimos</h1>
+    <h1 style="text-align: center;">Comentarios Anonimos</h1>
     <br>
     <br>
     <br>
@@ -10,10 +10,10 @@
 
 {% block crear_comentarios%}
     {% if user.is_authenticated %}
-    <h4 style="text-align: center; color: green;">Crear Comentario</h4>
+    <h4 style="text-align: center; color:white;" >Crear Comentario</h4>
     <br>
     <br>
-    <div style="text-align: center;">
+    <div style="text-align: center; color:white;">
         <form method="post">{% csrf_token %}
             
             {{ formulario.as_table}}

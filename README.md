@@ -1,10 +1,15 @@
 # MVT--Login-Register
-#!!!
-Prueba del pull
 
+Realizado por Diego Chavez y Andres Suarez
 
-Admin de web ---> admin123 password ---> admin123
+!!! Importante
+Antes de ejecutar realizar ---> pip install -r requirements.txt
+Para la instalacion de los paquetes!!!
 
-Se agrega App de Login y Registro y se deja funcional, quedan funcionando botones de Registrarse , Iniciar sesion en base.html.
+---> python .\manage.py makemigrations
+---> python manage.py migrate
 
-Se Actualiza login y registro, se cra funcion de edicion del perfil del usuario conectado. 
+Para garantizar el funcionamiento correcto de la web 
+
+Esta aplicación es una versión inicial, Este proyecto cuenta Con un inicio de sesión, registro, actualización de datos, CRUD de comentarios, CRUD de usuarios, cuenta con perfiles de usuario, con funciones de follow y posteo.
+El código funciona en su totalidad con los apartados mencionados, se esta haciendo una adaptación para subir la foto de perfil o avatar que aun esta en pruebas de funcionamiento.

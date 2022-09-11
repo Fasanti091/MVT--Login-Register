@@ -1,14 +1,31 @@
-from contextlib import redirect_stderr
+
 from http.client import HTTPResponse
-from multiprocessing import context
 from django.shortcuts import render, redirect
 from web.models import *
+from django.contrib.auth.models import User
 from datetime import datetime
 from web.forms import *
-
+from social.views import *
+from social.models import *
+from django.views.generic import ListView,DetailView
 # Create your views here.
 def index(request):
     return render(request, "web/index.html",{"dateTime": datetime.now})
+
+def nosotros(request):
+    return render(request, "web/nosotros.html")
+
+def frameworks(request):
+    return render(request, "web/frameworks.html")
+
+class UsuariosList(ListView):
+    model = User
+    template_name = "web/lista_usuarios.html"
+    
+class UserDetail(DetailView):
+    model = User
+    template_name = "web/detalles_usuarios.html"
+    
 
 def buscador(request):
     comentarios = Posteo.objects.all()

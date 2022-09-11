@@ -1,4 +1,6 @@
 {% extends 'web/base_principal.html' %}
+{% load static %}
+{% load humanize %}
 
 {% block index %}
 <div class="col-lg-8">
@@ -9,7 +11,7 @@
             <!-- Post title-->
             <h1 class="fw-bolder mb-1">Bienvenidos a nuestro Post de Python</h1>
             <!-- Post meta content-->
-            <div class="text-muted fst-italic mb-2">{{ dateTime }}</div>
+            <div class="text-muted fst-italic mb-2"><p style="color:white;">{{ dateTime }}</p></div>
             <!-- Post categories-->
             <a class="badge bg-secondary text-decoration-none link-light" href="#!">Web Design</a>
             <a class="badge bg-secondary text-decoration-none link-light" href="#!">Python</a>
@@ -47,16 +49,14 @@
             <div class="row">
                 <div class="col-sm-6">
                     <ul class="list-unstyled mb-0">
-                        <li><a href="#!">Blogs Creados </a></li>
-                        <li><a href="#!">Programacion</a></li>
-                        <li><a href="#!">Frameworks</a></li>
+                        <li><a href="{% url 'feed' %}">Blogs</a></li>
+                        <li><a href="{% url 'lista_usuarios' %}">Lista de Usuarios</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-6">
                     <ul class="list-unstyled mb-0">
-                        <li><a href="#!">ddf</a></li>
-                        <li><a href="#!">CSS</a></li>
-                        <li><a href="#!">Nosotros</a></li>
+                        <li><a href="{% url 'frameworks' %}">Frameworks</a></li>
+                        <li><a href="{% url 'nosotros' %}">Nosotros</a></li>
                     </ul>
                 </div>
             </div>

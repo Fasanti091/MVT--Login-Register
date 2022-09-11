@@ -1,0 +1,17 @@
+{% extends 'social/layout.html' %}
+
+{% block content %}
+
+<br>
+<h1 style="text-align: center;">Editar Perfil</h1>
+<br>
+
+
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Editar" class= "btn btn-success float-right">
+    </form>                    
+ </form>
+    
+{% endblock content %}

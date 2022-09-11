@@ -1,0 +1,63 @@
+{% extends 'web/base_principal.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block index %}
+
+<br>
+<h1 style="text-align: center;">¿Quienes somos?</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<div class="row">
+    <div class="col-sm-6">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-5">
+                    <div class="card-body">
+                        <img src="../media/imagen--Diego.jpeg" class="card-img" alt="...">
+                      </div>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="card-body">
+                        <h5 class="card-title">Diego Chavez</h5>
+                        <p class="card-text">Tengo  33 años, soy de uruguay, estoy certificado como Técnico en gestion y soporte IT. Python Developer, JavaScript, Html y css.
+
+                        </p>
+                        <a href="https://github.com/Dalthon1988" class="btn btn-primary">Ir a GitHub</a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-5">
+                <div class="card-body">
+                    <img src="../media/img_andres.jpg" class="img-fluid rounded-start" alt="...">
+                  </div>
+              </div>
+              <div class="col-md-7">
+                <div class="card-body">
+                    <h5 class="card-title">Andres Suarez</h5>
+                    <p class="card-text">Tengo 24 años, soy colombiano, estoy certificado como programador en Python, Django y Power BI, actualmente
+                        estudiante de ingeniería de sistemas, poseo conocimientos en 
+                        sentencias SQL, optimización de consultas, habilidades en JavaScript, CSS y 
+                        componentes web HTML.
+                        </p>
+                    <a href="https://github.com/Fasanti091" class="btn btn-primary">Ir a GitHub</a>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+
+
+{% endblock index %}

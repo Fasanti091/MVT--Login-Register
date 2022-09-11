@@ -1,0 +1,20 @@
+{% extends 'social/layout.html' %}
+
+
+{% block content %}
+
+<br>
+<h1 style="text-align: center;">Registrarse</h1>
+<br>
+
+<form class="form"method="post">
+
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <button type="submit" id="submit">Registrarse</button>
+
+</form>
+    
+{% endblock  %}
+    

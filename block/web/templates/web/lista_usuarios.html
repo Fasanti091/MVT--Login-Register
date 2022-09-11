@@ -1,0 +1,17 @@
+{% extends 'social/layout.html' %}
+
+
+
+
+
+{% block Usuarios %}
+
+
+  {% for user in object_list %}
+ <p>{{user}} <a href="{% url 'detalles' user.id %}"> >>>>Ver mas!<<<< </a></p>
+    
+  {% endfor %}
+    
+    
+ {% endblock Usuarios %}
+    

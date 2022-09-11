@@ -1,0 +1,13 @@
+{% extends 'social/layout.html' %}
+
+
+
+{% block Avatar %}
+<form action="" enctype="multipart/from-data">
+    {% csrf_token %}
+    {{form.as_p}}
+  <input type="submit" value="Cargar">
+</form>
+    
+{% endblock Avatar %}
+    

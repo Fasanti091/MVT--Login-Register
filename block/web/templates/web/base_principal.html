@@ -14,7 +14,7 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'web/css/styles.css' %}" rel="stylesheet" />
     </head>
-    <body>
+    <body style="background: #0E6655">
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
@@ -24,30 +24,15 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="{% url 'inicio' %}">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'comentarios' %}">Comentarios</a></li>                        
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'registro' %}">Registrarse</a></li>
                         {% if user.is_authenticated %}
-                        <li><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">                                               
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Contenido</a>
-                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <li><a class="dropdown-item" href="#!">Sobre programación</a></li>
-                                            <li><hr class="dropdown-divider" /></li>
-                                            <li><a class="dropdown-item" href="#!">Sobre Frameworks</a></li>
-                                            <li><hr class="dropdown-divider" /></li>
-                                            <li><a class="dropdown-item" href="#!">Sobre Nosotros</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>                                
-                            </div>           
-                            
+                        <li><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>          
                         </li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Cerrar sesion</a>                        
-                        <li class="nav-item"><a class="nav-link" href="#">@{{user.username}}</a>
-                        </li class="nav-item"><a class="nav-link" href="{% url 'editar' %}">Editar</a>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}">@{{user.username}}</a>
+                        </li class="nav-item"><a class="nav-link" href="{% url 'editar_perfil' %}">Editar perfil</a>
                         </li>
                         {% else %}
                         <li>
+                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'register' %}">Registrarse</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Iniciar Sesion</a></li>
                         </li>
                         {%endif%}
@@ -59,7 +44,6 @@
         <!-- Page content-->
         <div class="container mt-5">
             <div class="row">
-                
                 {% block titulo_comnetarios %}{% endblock titulo_comnetarios %}
                 {% block crear_comentarios%}{% endblock crear_comentarios%}
                 {% block index %}{% endblock index %}
@@ -67,9 +51,7 @@
                 {% block listado %}{% endblock listado %}
                 {% block Editar_usuario %}{% endblock Editar_usuario %}              
                 {% block registro %}{% endblock registro %}
-                {% block login %}{% endblock login %}
-                
-                    
+                {% block login %}{% endblock login %}    
             </div>
         </div>
         

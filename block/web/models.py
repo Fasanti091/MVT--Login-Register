@@ -1,4 +1,5 @@
 from django.db import models
+from social.models import *
 
 # Create your models here.
 class Posteo(models.Model):
